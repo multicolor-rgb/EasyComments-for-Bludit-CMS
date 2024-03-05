@@ -1,4 +1,4 @@
-#EasyComments for Bludit CMS
+# EasyComments for Bludit CMS
 
  Easy Comments system for everyone for normal page and post!
 
@@ -9,5 +9,5 @@
 - reply to another comment accept
 - MultiLang support (Lang folder exist)
 
-###How use it?
+### How use it?
 Just place &lt;?php easyComments();?&gt;  on your template!
