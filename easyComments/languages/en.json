@@ -1,0 +1,32 @@
+{
+	"plugin-data":
+	{
+		"name": "EasyComments",
+		"description": " Easy Comments system for everyone for normal page and post"
+	},
+
+	"comments":"Comments",
+	"desc": "Easy Comments system for everyone for normal page and NewsManager!",
+	"place": "Just place on yours template:)  ",
+	"clearlog" : "Clear Log",
+	"leavecomment" : "Leave Comment",
+	"name":"Name:",
+	"email": "Email:",
+	"message" : "Message:",
+	"replyto" :"Reply to:",
+	"required" :"required",
+	"privacy" :"I accept the privacy policy",
+	"addcomment" :"Add Comment",
+	"publishcomment" :"publish comment",
+	"deletecomment" :"delete comment",
+"reply" :"Reply",
+	"log":"Log Comments",
+	"enteremail" :"Enter your email address where we should notify you about new comments",
+	"saveemail":"Save Email",
+	"deleted":"Comment Deleted!",
+	"wrongcaptcha":"Wrong Captcha!",
+	"commentadded" : "Comment added! Please wait for approval by the administrator",
+	"published" : "Comment published!",
+	"commentaddedon":"Comment added on",
+	"commentwait":"Comment waiting for accept on page/post id:"
+}
