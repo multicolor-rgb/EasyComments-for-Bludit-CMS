@@ -5,8 +5,8 @@
 
 - All comments waiting for accept from admin.
 - Easy to use
-- Build Captcha
-- reply to another comment accept
+- Captcha
+- Reply to another comment option
 - MultiLang support (Lang folder exist)
 
 ### How use it?
