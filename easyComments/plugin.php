@@ -31,11 +31,19 @@ class easyComments extends Plugin
     }
 
 
+    public function adminBodyBegin(){
+
+        if (!isset($_SESSION)) {
+            session_start();
+        };
+
+    }
+
     public function adminSidebar()
     {
         $pluginName = Text::lowercase(__CLASS__);
         $url = HTML_PATH_ADMIN_ROOT . 'plugin/' . $pluginName;
-        $html = '<a id="current-version" class="nav-link" href="' . $url . '">EasyContact</a>';
+        $html = '<a id="current-version" class="nav-link" href="' . $url . '">EasyComments 🤭</a>';
         return $html;
     }
 }
@@ -141,13 +149,13 @@ function easyComments()
             $xml->asXML($fileDir);
 
             $fileLog = PATH_CONTENT . 'easyCommentsLog.txt';
-
+            $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             if (file_exists($fileLog)) {
                 mail($to, $subject, $body, $headers);
-                file_put_contents($fileLog,  ' <b>' . date('l jS \of F Y h:i:s A')  . ' ' . $L->get('commentwait') . $id . '</b><br>' . file_get_contents($fileLog));
+                file_put_contents($fileLog,  ' <b>' . date('l jS \of F Y h:i:s A')  . ' ' . $L->get('commentwait') .'<a href="'. $actual_link.'" target="_blank">'. $id . '</a></b><br>' . file_get_contents($fileLog));
             } else {
                 mail($to, $subject, $body, $headers);
-                file_put_contents($fileLog, ' <b>' . date('l jS \of F Y h:i:s A') . ' ' .  $L->get('commentwait') . $id . '</b><br>');
+                file_put_contents($fileLog, ' <b>' . date('l jS \of F Y h:i:s A') . ' ' .  $L->get('commentwait') .'<a href="'. $actual_link.'"  target="_blank">'. $id . '</a></b><br>');
             }
 
             echo '<div class="alert alert-success" id="comment-alert"><span>' . $L->get('commentadded')  . '</span></div>';

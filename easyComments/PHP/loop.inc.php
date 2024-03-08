@@ -137,7 +137,7 @@ if (file_exists($fileDir)) {
                 echo '
                     <form  method="POST">
                     <input type="hidden" name="deleteComment" value="' . $comment['id'] . '">
-                    <input type="submit"    class="easyCommentsCardDelete" value="' .  $L->get('deletecomment') . '">
+                    <input type="submit"    class="easyCommentsCardDelete" value="' .  $L->get('deletecomment') . ' ">
                     </form>
                      ';
             };
