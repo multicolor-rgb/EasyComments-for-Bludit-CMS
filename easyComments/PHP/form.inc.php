@@ -1,5 +1,5 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+ 
 
     .easyCommentsForm {
         background: #fafafa;
@@ -68,14 +68,14 @@
         margin-right: 15px;
         min-width: 100px;
         padding-top: 10px;
-        font-family: 'Special Elite', cursive;
+        font-family: inherit;
         font-size: 25px;
         padding: 5px;
         margin: 0;
         display: inline-block;
         margin: 0 !important;
         margin-bottom: 5px !important;
-        background-image: url(<?php echo DOMAIN_BASE.'bl-plugins/easyComments/img/bg.jpg';?>);
+        background: url('<?php DOMAIN_PLUGINS ?>easyComments/img/bg.jpg');
     }
 
     .easyCommentsForm .checkbox {
@@ -93,40 +93,41 @@
 </style>
 
 <form class="easyCommentsForm" id="comments" method="post">
-    <p class="easyCommentsFormTitle"><?php echo  $L->get('leavecomment'); ?></p>
+    <p class="easyCommentsFormTitle"><?php echo $L->get('leavecomment'); ?></p>
     <hr>
-    <label for="name"><?php echo   $L->get('name'); ?></label>
-    <input type="text" name="name" id="name" required><br>
+    <label for="name"><?php echo $L->get('name'); ?></label>
+    <input type="text" name="name" id="name" value="<?php if(isset($_POST['name'])){echo $_POST['name'];};?>" required><br>
 
-    <label for="email"><?php echo  $L->get('email'); ?></label>
-    <input type="email" name="email" id="email" required><br>
+    <label for="email"><?php echo $L->get('email'); ?></label>
+    <input type="email" name="email" id="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];};?>" required><br>
 
-    <label for="message"><?php echo  $L->get('message'); ?></label>
-    <textarea name="message" id="message" required></textarea><br>
+    <label for="message"><?php echo $L->get('message'); ?></label>
+    <textarea name="message" id="message" required><?php if(isset($_POST['message'])){echo $_POST['message'];};?></textarea><br>
 
     <!-- Pole hidden do przechowywania identyfikatora komentarza, na który odpowiada -->
     <input type="hidden" name="parent_id" id="parent_id" value="">
 
     <!-- Wyświetlanie identyfikatora komentarza, na który odpowiada -->
     <div class="ec-none ecr" style="width:100%;background:red;color:#fff;display:flex;border-radius:5px;padding:5px;box-sizing:border-box;margin:10px 0;align-items:center;justify-content:between;">
-        <label for="reply_to" style="margin:0 !important;padding:0 !important;"><?php echo   $L->get('replyto'); ?> </label>
+        <label for="reply_to" style="margin:0 !important;padding:0 !important;"><?php echo $L->get('replyto'); ?> </label>
         <span id="reply_to" style="margin:0;padding:0;margin-left:5px;"></span><br>
     </div>
 
-    <span class="no-highlight"><?php echo $question; ?></span>
-    <input type="text" name="captcha_answer" id="captcha_answer" required>
+
+    <div class="h-captcha" data-sitekey="<?php echo file_get_contents(PATH_CONTENT.'easyComments/sitekey.txt');?>"></div>
 
     <label for="checkbox" class="checkbox">
         <input type="checkbox" name="checkbox" required>
-        <?php echo  $L->get('privacy'); ?> <span style="color:red">(<?php echo  $L->get('required'); ?>)</span>
+        <?php echo $L->get('privacy'); ?> <span style="color:red">(<?php echo $L->get('required'); ?>)</span>
     </label>
 
     <!-- Pole honeypot -->
     <input type="text" name="honeypot" style="display: none;">
     <hr>
-    <input type="submit" name="sendcomment" value="<?php echo   $L->get('addcomment'); ?>">
+    <input type="submit" name="sendcomment" value="<?php echo $L->get('addcomment'); ?>">
 </form>
 
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
 <script>
     // Pobierz wszystkie przyciski "Reply"

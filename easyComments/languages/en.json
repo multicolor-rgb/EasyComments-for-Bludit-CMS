@@ -28,5 +28,8 @@
 	"commentadded" : "Comment added! Please wait for approval by the administrator",
 	"published" : "Comment published!",
 	"commentaddedon":"Comment added on",
-	"commentwait":"Comment waiting for accept on page/post id:"
+	"commentwait":"Comment waiting for accept on page/post id:",
+	"enteremail":"Enter Email",
+	"secretkey":"Secret Key",
+	"sitekey":"Site Key"
 }
