@@ -39,7 +39,9 @@ $tokenCSRF = $security->getTokenCSRF();
 
     <input type="text" style="width:100%;padding:10px;box-sizing:border-box;margin-bottom:5px;" value="<?php echo @file_get_contents(PATH_CONTENT . 'easyComments/easyCommentsMail.txt'); ?>" placeholder="" name="adminemail">
 
-    <a href="https://www.hcaptcha.com/">Grab site key and secret key</a>
+    <hr>
+    <a href="https://www.hcaptcha.com/" target="_blank">Grab site key and secret key</a>
+
     <br>
     <label style="margin-top:20px;"><?php echo $L->get('secretkey');?></label>
     <input type="text"  name="secretkey" style="width:100%;padding:10px;box-sizing:border-box;margin-bottom:5px;"  value="<?php echo @file_get_contents(PATH_CONTENT . 'easyComments/secretkey.txt'); ?>">
