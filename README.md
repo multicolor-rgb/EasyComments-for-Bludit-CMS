@@ -5,7 +5,7 @@
 
 - All comments waiting for accept from admin.
 - Easy to use
-- Captcha
+- HCaptcha
 - Reply to another comment option
 - MultiLang support (Lang folder exist)
 
