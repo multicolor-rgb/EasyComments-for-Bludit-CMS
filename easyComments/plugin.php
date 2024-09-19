@@ -10,7 +10,7 @@ class easyComments extends Plugin
         if (isset($_POST['deletelog'])) {
 
             global $fileLog;
-            unlink(PATH_CONTENT . 'easyComments/log.txt');
+            unlink(PATH_CONTENT . 'easyCommentsLog.txt');
             echo "<meta http-equiv='refresh' content='0'>";
         };
 
@@ -60,7 +60,7 @@ function easyComments()
 
 
 
-    $fileLog = PATH_CONTENT . 'easyComments/log.txt';
+    $fileLog = PATH_CONTENT . 'easyCommentsLog.txt';
 
 
     $fileDir = PATH_CONTENT . 'easyComments/' . $id . '.xml';
@@ -118,17 +118,16 @@ function easyComments()
         $parent_id = $_POST['parent_id'] !== '' ? htmlentities($_POST['parent_id']) : null;
 
         // Tworzenie wiadomości e-mail
-        $to = @file_get_contents(PATH_CONTENT . 'easyComments/mail.txt'); // Zmień na właściwy adres e-mail administratora
+        $to = @file_get_contents(PATH_CONTENT . 'easyComments/easyCommentsMail.txt'); // Zmień na właściwy adres e-mail administratora
         $subject = "New comment: $name";
         $body = "New Comments: $name\n";
         $body .= "Email: $email\n";
 
-        global $id;
-        $body .= "Slug page with comment: $id\n";
+        $body .= "Slug page with comment: $id \n";
         $body .= "message:\n$message";
 
         // Wysyłanie e-maila
-        $headers = "From: " . @file_get_contents(PATH_CONTENT . 'easyComments/mail.txt') . "\r\n";
+        $headers = "From: " . @file_get_contents(PATH_CONTENT . 'easyComments/easyCommentsMail.txt') . "\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
         // Otwarcie pliku XML
@@ -164,9 +163,8 @@ function easyComments()
         // Zapisanie zmian w pliku XML
         $xml->asXML($fileDir);
 
-    $fileLog = PATH_CONTENT . 'easyComments/log.txt';
-    $id = $page->slug();
-    
+        global $fileLog;
+        global $id;
         $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         if (file_exists($fileLog)) {
             mail($to, $subject, $body, $headers);
@@ -177,7 +175,7 @@ function easyComments()
         }
 
         echo '<div class="alert alert-success" id="comment-alert"><span>' . $L->get('commentadded') . '</span></div>';
-        #echo "<meta http-equiv='refresh' content='1'>";
+        echo "<meta http-equiv='refresh' content='1'>";
     } else {
         // Kod CAPTCHA jest niepoprawny
         echo '<div class="alert alert-danger wrongcaptcha" id="comment-alert"><span>' . $L->get('wrongcaptcha') . '</span></div>';

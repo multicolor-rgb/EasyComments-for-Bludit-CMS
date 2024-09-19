@@ -1,0 +1,35 @@
+{
+	"plugin-data":
+	{
+		"name": "EasyComments",
+		"description": "Łatwy system komentarzy dla wszystkich na zwykłe strony i posty"
+	},
+
+	"comments": "Komentarze",
+	"desc": "Łatwy system komentarzy dla wszystkich na zwykłe strony i NewsManager!",
+	"place": "Umieść w swoim szablonie :)",
+	"clearlog": "Wyczyść log",
+	"leavecomment": "Zostaw komentarz",
+	"name": "Imię / pseudonim:",
+	"email": "Email:",
+	"message": "Wiadomość:",
+	"replyto": "Odpowiedz do:",
+	"required": "Wymagane",
+	"privacy": "Akceptuję politykę prywatności (nic nie robię z twoimi danymi, ale musi to tu być)",
+	"addcomment": "Dodaj komentarz",
+	"publishcomment": "Publikuj komentarz",
+	"deletecomment": "Usuń komentarz",
+	"reply": "Odpowiedz",
+	"log": "Log komentarzy",
+	"enteremail": "Wprowadź swój adres e-mail, na który powinniśmy powiadamiać o nowych komentarzach",
+	"saveemail": "Zapisz e-mail",
+	"deleted": "Komentarz usunięty!",
+	"wrongcaptcha": "Zły Captcha!",
+	"commentadded": "Komentarz dodany! Proszę czekać na zatwierdzenie przez administratora",
+	"published": "Komentarz opublikowany!",
+	"commentaddedon": "Komentarz dodany dnia",
+	"commentwait": "Komentarz oczekujący na akceptację na stronie/post ID:",
+	"enteremail": "Wprowadź e-mail",
+	"secretkey": "Klucz tajny",
+	"sitekey": "Klucz strony"
+}
