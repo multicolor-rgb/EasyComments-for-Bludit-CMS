@@ -1,0 +1,30 @@
+{
+	"plugin-data": {
+		"name": "EasyComments",
+		"description": "Einfache Erweiterung zum Kommentieren von Seiten und Beiträgen für alle"
+	},
+	"comments": "Kommentare",
+	"desc": "Einfaches Kommentarsystem für alle Seiten und Beiträge!",
+	"place": "Einfach in deinem Template platzieren",
+	"clearlog": "Log leeren",
+	"leavecomment": "Hinterlasse ein Kommentar",
+	"name": "Name:",
+	"email": "E-Mail:",
+	"message": "Nachricht:",
+	"replyto": "Antwort an:",
+	"required": "Pflichtfeld",
+	"privacy": "Ich akzeptiere die Datenschutzerklärung.",
+	"addcomment": "Kommentar hinzufügen",
+	"publishcomment": "Kommentar veröffentlichen",
+	"deletecomment": "Kommentar löschen",
+	"reply": "Antworten",
+	"log": "Logge Kommentare",
+	"enteremail": "Gib deine E-Mail-Adresse ein, um über neue Kommentare benachrichtigt zu werden.",
+	"saveemail": "E-Mail-Adresse speichern",
+	"deleted": "Kommentar gelöscht!",
+	"wrongcaptcha": "Das Captcha enthielt einen Fehler!",
+	"commentadded": "Kommentar hinzugefügt! Freigabe des Administrators ausstehend.",
+	"published": "Kommentar veröffentlicht!",
+	"commentaddedon": "Kommentar hinzugefügt",
+	"commentwait": "Freigabe für Kommentar ausstehend. Seite/Beitrag:"
+}
